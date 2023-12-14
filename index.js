@@ -4,6 +4,7 @@ import * as dotenv from 'dotenv';
 
 import connectDB from './mongodb/connect.js';
 import registrationRouter from "./routes/registration.routes.js";
+import userRouter from "./routes/user.routes.js";
 
 
 dotenv.config();
@@ -18,6 +19,7 @@ app.get('/', ( req, res ) => {
 });
 
 app.use('/register', registrationRouter);
+app.use('/user', userRouter);
 
 
 const startServer = async () => {
